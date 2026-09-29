@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090a12">
+  <meta name="description" content="Isang interactive na confession prank page na puno ng what if.">
+  <title>May Sasabihin Sana Ako…</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="aurora aurora-a" aria-hidden="true"></div>
+  <div class="aurora aurora-b" aria-hidden="true"></div>
+
+  <main class="app" id="app">
+    <section class="screen active" id="startScreen" aria-labelledby="startTitle">
+      <div class="eyebrow"><span class="dot"></span> PRIVATE NOTE · 01</div>
+      <h1 id="startTitle">May sasabihin sana ako…</h1>
+      <p class="sub">Huwag mo munang husgahan. Basahin mo hanggang dulo.</p>
+
+      <div class="lock-card">
+        <div class="lock-icon" aria-hidden="true">⌁</div>
+        <div>
+          <strong>May isang bagay akong matagal nang iniisip.</strong>
+          <span>Pwede mo bang buksan?</span>
+        </div>
+      </div>
+
+      <button class="primary-btn" id="openBtn" type="button">
+        <span>Buksan ang message</span>
+        <span class="arrow">→</span>
+      </button>
+
+      <p class="micro">Tip: Mas okay kung hindi mo muna i-skip. 👀</p>
+    </section>
+
+    <section class="screen" id="storyScreen" aria-labelledby="storyTitle" hidden>
+      <div class="topbar">
+        <button class="ghost-btn" id="restartBtn" type="button" title="Restart">↺</button>
+        <div class="progress-wrap" aria-label="Progress">
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <span id="stepText">1 / 9</span>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="card-meta"><span id="metaTag">THOUGHT</span><span id="timeStamp">11:11 PM</span></div>
+        <div class="typing-area">
+          <h2 id="storyTitle">What if…</h2>
+          <p id="storyText"></p>
+        </div>
+        <div class="choices" id="choices"></div>
+        <button class="continue-btn" id="continueBtn" type="button">Tuloy →</button>
+      </div>
+
+      <div class="hint" id="hint">Dahan-dahan lang. May kasunod pa.</div>
+    </section>
+
+    <section class="screen" id="pauseScreen" aria-labelledby="pauseTitle" hidden>
+      <div class="eyebrow"><span class="dot red"></span> WAIT.</div>
+      <h2 id="pauseTitle">Bago ka magpatuloy…</h2>
+      <p class="sub" id="pauseText">Sigurado ka bang gusto mong malaman kung saan papunta ’to?</p>
+
+      <div class="pulse-card">
+        <div class="pulse-orb"></div>
+        <div>
+          <strong>May isang sentence dito na baka maalala mo.</strong>
+          <span>At baka mali ang iniisip mo.</span>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button class="ghost-wide" id="backToStory" type="button">Bumalik</button>
+        <button class="primary-btn compact" id="dangerBtn" type="button">Sige, ituloy</button>
+      </div>
+    </section>
+
+    <section class="screen" id="revealScreen" aria-labelledby="revealTitle" hidden>
+      <div class="reveal-glow" aria-hidden="true"></div>
+      <div class="eyebrow">FINAL NOTE · 09</div>
+      <h2 id="revealTitle">Aamin na sana ako…</h2>
+      <p class="reveal-lead" id="revealLead">…pero may isang bagay muna akong kailangang sabihin.</p>
+
+      <div class="fake-confession" id="fakeConfession">
+        <p>“Ang totoo…</p>
+        <p class="big-line">gusto kita.</p>
+        <p>Gusto kita noong una pa. Gusto kitang makausap. Gusto kong sabihin lahat ng nasa isip ko. At natakot ako na baka hindi mo ako gusto pabalik…”</p>
+      </div>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <span id="countdownNumber">3</span>
+        <small>seconds before the truth</small>
+      </div>
+
+      <button class="mystery-btn" id="truthBtn" type="button" disabled>
+        Ano yung totoo?
+      </button>
+    </section>
+
+    <section class="screen" id="prankScreen" aria-labelledby="prankTitle" hidden>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <div class="prank-badge">PRANK DETECTED</div>
+      <h2 id="prankTitle">HAHAHAHA 😭</h2>
+      <p class="prank-big">Akala mo confession?</p>
+      <p class="prank-copy">Joke lang. Grabe, binasa mo talaga hanggang dulo. 😭</p>
+
+      <div class="score-card">
+        <div><span>LEVEL OF KABA</span><strong id="fakeScore">99%</strong></div>
+        <div><span>NA-LOKO</span><strong>✓</strong></div>
+        <div><span>DRAMA</span><strong>OVERLOAD</strong></div>
+      </div>
+
+      <div class="after-card">
+        <div class="mini-icon">🫵</div>
+        <div>
+          <strong>Pero aminin mo…</strong>
+          <span>may “what if” kang naisip kahit isang beses. 😭</span>
+        </div>
+      </div>
+
+      <button class="primary-btn" id="againBtn" type="button">
+        <span>Ulitin para mas nakakakaba</span>
+        <span class="arrow">↻</span>
+      </button>
+
+      <p class="micro">Walang pressure, walang tunay na confession. Trip lang talaga. 😂</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
